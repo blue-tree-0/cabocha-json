@@ -1,0 +1,221 @@
+{
+    "sentence": "太郎は花子が読んでいる本を次郎に渡した。",
+    "result": {
+        "0": {
+            "chunk": "太郎は",
+            "link": "5",
+            "token": {
+                "太郎": {
+                    "pos": "名詞",
+                    "pos1": "固有名詞",
+                    "pos2": "人名",
+                    "pos3": "名",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "太郎",
+                    "reading": "タロウ",
+                    "pronunciation": "タロー",
+                    "ner": "B-PERSON"
+                },
+                "は": {
+                    "pos": "助詞",
+                    "pos1": "係助詞",
+                    "pos2": "*",
+                    "pos3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "は",
+                    "reading": "ハ",
+                    "pronunciation": "ワ",
+                    "ner": "O"
+                }
+            }
+        },
+        "1": {
+            "chunk": "花子が",
+            "link": "2",
+            "token": {
+                "花子": {
+                    "pos": "名詞",
+                    "pos1": "固有名詞",
+                    "pos2": "人名",
+                    "pos3": "名",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "花子",
+                    "reading": "ハナコ",
+                    "pronunciation": "ハナコ",
+                    "ner": "B-PERSON"
+                },
+                "が": {
+                    "pos": "助詞",
+                    "pos1": "格助詞",
+                    "pos2": "一般",
+                    "pos3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "が",
+                    "reading": "ガ",
+                    "pronunciation": "ガ",
+                    "ner": "O"
+                }
+            }
+        },
+        "2": {
+            "chunk": "読んでいる",
+            "link": "3",
+            "token": {
+                "読ん": {
+                    "pos": "動詞",
+                    "pos1": "自立",
+                    "pos2": "*",
+                    "pos3": "*",
+                    "conjugated_type": "五段・マ行",
+                    "conjugated_form": "連用タ接続",
+                    "base": "読む",
+                    "reading": "ヨン",
+                    "pronunciation": "ヨン",
+                    "ner": "O"
+                },
+                "で": {
+                    "pos": "助詞",
+                    "pos1": "接続助詞",
+                    "pos2": "*",
+                    "pos3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "で",
+                    "reading": "デ",
+                    "pronunciation": "デ",
+                    "ner": "O"
+                },
+                "いる": {
+                    "pos": "動詞",
+                    "pos1": "非自立",
+                    "pos2": "*",
+                    "pos3": "*",
+                    "conjugated_type": "一段",
+                    "conjugated_form": "基本形",
+                    "base": "いる",
+                    "reading": "イル",
+                    "pronunciation": "イル",
+                    "ner": "O"
+                }
+            }
+        },
+        "3": {
+            "chunk": "本を",
+            "link": "5",
+            "token": {
+                "本": {
+                    "pos": "名詞",
+                    "pos1": "一般",
+                    "pos2": "*",
+                    "pos3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "本",
+                    "reading": "ホン",
+                    "pronunciation": "ホン",
+                    "ner": "O"
+                },
+                "を": {
+                    "pos": "助詞",
+                    "pos1": "格助詞",
+                    "pos2": "一般",
+                    "pos3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "を",
+                    "reading": "ヲ",
+                    "pronunciation": "ヲ",
+                    "ner": "O"
+                }
+            }
+        },
+        "4": {
+            "chunk": "次郎に",
+            "link": "5",
+            "token": {
+                "次": {
+                    "pos": "名詞",
+                    "pos1": "一般",
+                    "pos2": "*",
+                    "pos3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "次",
+                    "reading": "ツギ",
+                    "pronunciation": "ツギ",
+                    "ner": "O"
+                },
+                "郎": {
+                    "pos": "名詞",
+                    "pos1": "一般",
+                    "pos2": "*",
+                    "pos3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "郎",
+                    "reading": "ロウ",
+                    "pronunciation": "ロー",
+                    "ner": "O"
+                },
+                "に": {
+                    "pos": "助詞",
+                    "pos1": "格助詞",
+                    "pos2": "一般",
+                    "pos3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "に",
+                    "reading": "ニ",
+                    "pronunciation": "ニ",
+                    "ner": "O"
+                }
+            }
+        },
+        "5": {
+            "chunk": "渡した。",
+            "link": "-1",
+            "token": {
+                "渡し": {
+                    "pos": "動詞",
+                    "pos1": "自立",
+                    "pos2": "*",
+                    "pos3": "*",
+                    "conjugated_type": "五段・サ行",
+                    "conjugated_form": "連用形",
+                    "base": "渡す",
+                    "reading": "ワタシ",
+                    "pronunciation": "ワタシ",
+                    "ner": "O"
+                },
+                "た": {
+                    "pos": "助動詞",
+                    "pos1": "*",
+                    "pos2": "*",
+                    "pos3": "*",
+                    "conjugated_type": "特殊・タ",
+                    "conjugated_form": "基本形",
+                    "base": "た",
+                    "reading": "タ",
+                    "pronunciation": "タ",
+                    "ner": "O"
+                },
+                "。": {
+                    "pos": "記号",
+                    "pos1": "句点",
+                    "pos2": "*",
+                    "pos3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "base": "。",
+                    "reading": "。",
+                    "pronunciation": "。",
+                    "ner": "O"
+                }
+            }
+        }
+    }
+}
