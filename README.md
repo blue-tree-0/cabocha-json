@@ -1,9 +1,26 @@
 # Cabocha-json
 Cabochaの出力結果をjsonファイルに保存
 
-入力文: 太郎は花子が読んでいる本を次郎に渡した。
+## インストール
+事前に[cabocha](https://taku910.github.io/cabocha/)の環境構築が必要です．
+```
+pip install git+https://github.com/blue-tree-0/cabocha-json
+```
 
-``````
+
+## 使い方
+
+### コード
+```
+from cabocha_json import CabochaJSON
+
+sentence = "太郎は花子が読んでいる本を次郎に渡した。"
+cabocha = CabochaJSON()
+cabocha.parse_json(sentence, "output.json")
+```
+
+###  output.json
+```
 {
     "sentence": "太郎は花子が読んでいる本を次郎に渡した。",
     "result": {
@@ -40,4 +57,4 @@ Cabochaの出力結果をjsonファイルに保存
         ...
     }
 }
-``````
+```
