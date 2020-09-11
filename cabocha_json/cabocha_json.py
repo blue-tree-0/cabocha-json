@@ -8,10 +8,8 @@ class CabochaJSON:
         super().__init__()
         self.cabocha = CaboCha.Parser("-f1 -n1")
 
-    def parse_save(self, sentence, file="output.json"):
-        output = {}
-        output["sentence"] = sentence
-        output["result"] = {}
+    def parse(self, sentence):
+        result = {}
         tree = self.cabocha.parse(sentence)
         chunk_idx = -1
         for token_idx in range(tree.token_size()):
@@ -27,12 +25,12 @@ class CabochaJSON:
                     ]
                 )
                 chunk_idx += 1
-                output["result"][str(chunk_idx)] = {}
-                output["result"][str(chunk_idx)]["chunk"] = chunk_surface
-                output["result"][str(chunk_idx)]["link"] = str(chunk.link)
-                output["result"][str(chunk_idx)]["token"] = {}
+                result[str(chunk_idx)] = {}
+                result[str(chunk_idx)]["chunk"] = chunk_surface
+                result[str(chunk_idx)]["link"] = str(chunk.link)
+                result[str(chunk_idx)]["token"] = {}
 
-            output["result"][str(chunk_idx)]["token"][token.surface] = {
+            result[str(chunk_idx)]["token"][token.surface] = {
                 "pos": token.feature_list(0),
                 "pos1": token.feature_list(1),
                 "pos2": token.feature_list(2),
@@ -44,6 +42,13 @@ class CabochaJSON:
                 "pronunciation": token.feature_list(8),
                 "ner": token.ne,
             }
+
+        return result
+
+    def parse_save(self, sentence, file="output.json"):
+        result = self.parse(sentence)
+
+        output = {"sentence": sentence, "result": result}
 
         if Path(file).suffix != ".json":
             file += ".json"
