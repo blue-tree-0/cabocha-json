@@ -20,7 +20,7 @@ cabocha = CabochaJSON()
 # cabochaの出力結果を辞書型で出力
 result = cabocha.parse(sentence)
 
-# cabochaの出力結果をoutput.jsonで保存
+# cabochaの出力結果をoutput.jsonに保存
 cabocha.parse_save(sentence, "output.json")
 ```
 
