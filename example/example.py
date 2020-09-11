@@ -1,4 +1,3 @@
-import json
 from cabocha_json import CabochaJSON
 
 
@@ -78,11 +77,7 @@ if __name__ == "__main__":
     cabocha = CabochaJSON()
     cabocha.parse_save(sentence, "output.json")
 
-    with open("output.json", "r") as f:
-        data = json.load(f)
-
-    sentence = data["sentence"]
-    result = data["result"]
+    result = cabocha.parse(sentence)
 
     print(f"入力文:\n{sentence}")
     print(f"形態素解析:\n{get_token(result)}")
