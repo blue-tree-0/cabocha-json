@@ -1,5 +1,5 @@
 # Cabocha-json
-Cabochaの出力結果をjsonファイルに保存
+Cabochaの出力結果をjsonファイルで保存
 
 ## インストール
 事前に[cabocha](https://taku910.github.io/cabocha/)の環境構築が必要です．
@@ -16,7 +16,12 @@ from cabocha_json import CabochaJSON
 
 sentence = "太郎は花子が読んでいる本を次郎に渡した。"
 cabocha = CabochaJSON()
-cabocha.parse_json(sentence, "output.json")
+
+# cabochaの出力結果を辞書型で出力
+result = cabocha.parse(sentence)
+
+# cabochaの出力結果をoutput.jsonで保存
+cabocha.parse_save(sentence, "output.json")
 ```
 
 ###  output.json
