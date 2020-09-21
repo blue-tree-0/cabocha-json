@@ -4,9 +4,10 @@ from pathlib import Path
 
 
 class CabochaJSON:
-    def __init__(self):
+    def __init__(self, option="-f1 -n1"):
         super().__init__()
-        self.cabocha = CaboCha.Parser("-f1 -n1")
+        self.option = option
+        self.cabocha = CaboCha.Parser(self.option)
 
     def parse(self, sentence):
         result = {}
