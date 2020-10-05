@@ -8,6 +8,17 @@ class CabochaJSON:
         super().__init__()
         self.option = option
         self.cabocha = CaboCha.Parser(self.option)
+        self.token_feature_name_list = [
+            "pos",
+            "pos1",
+            "pos2",
+            "pos3",
+            "conjugated_type",
+            "conjugated_form",
+            "base",
+            "reading",
+            "pronunciation",
+        ]
 
     def parse(self, sentence):
         result = {}
@@ -31,18 +42,14 @@ class CabochaJSON:
                 result[str(chunk_idx)]["link"] = str(chunk.link)
                 result[str(chunk_idx)]["token"] = {}
 
-            result[str(chunk_idx)]["token"][token.surface] = {
-                "pos": token.feature_list(0),
-                "pos1": token.feature_list(1),
-                "pos2": token.feature_list(2),
-                "pos3": token.feature_list(3),
-                "conjugated_type": token.feature_list(4),
-                "conjugated_form": token.feature_list(5),
-                "base": token.feature_list(6),
-                "reading": token.feature_list(7),
-                "pronunciation": token.feature_list(8),
-                "ner": token.ne,
-            }
+            token_feature_list = [
+                token.feature_list(fi)
+                for fi in range(len(self.token_feature_name_list))
+            ]
+            result[str(chunk_idx)]["token"][token.surface] = dict(
+                zip(self.token_feature_name_list, token_feature_list)
+            )
+            result[str(chunk_idx)]["token"][token.surface]["ner"] = token.ne
 
         return result
 
