@@ -45,7 +45,7 @@ def get_triple(result):
         return False
 
     # 指定した助詞があるか確認
-    def check_paricle(chunk_idx, pos_name):
+    def check_particle(chunk_idx, pos_name):
         tokens = result[chunk_idx]["token"]
         for token in tokens.keys():
             if token == pos_name:
@@ -56,16 +56,16 @@ def get_triple(result):
     triple = {"subject": None, "verb": None, "object": None}
     for idx in result.keys():
         if check_pos(idx, "pos", "名詞"):
-            if check_paricle(idx, "が") or check_paricle(idx, "は"):
+            if check_particle(idx, "が") or check_particle(idx, "は"):
                 triple["subject"] = result[idx]["chunk"]
                 continue
 
-            if check_paricle(idx, "を"):
+            if check_particle(idx, "を"):
                 triple["object"] = result[idx]["chunk"]
                 continue
 
         if check_pos(idx, "pos", "動詞"):
-            if check_paricle(idx, "。"):
+            if check_particle(idx, "。"):
                 triple["verb"] = result[idx]["chunk"]
                 continue
 
